@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
+import MessageBox from "./MessageBox";
+
 const UserList = ({ users }) => {
   const messageRef = useRef(null);
 
@@ -7,15 +9,18 @@ const UserList = ({ users }) => {
     messageRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
+  const messageBoxRightStyle = {
+    background: "rgb(1 35 172 / 37%)",
+    color: "#fff",
+  };
+
   return (
     <>
       {users?.map((user) => {
         if (user.id % 2 === 0) {
           return (
             <div key={user.id} className="message_box_wrapper">
-              <div key={user.id} className="message_box message_box_left">
-                <p>{user.name}</p>
-              </div>
+              <MessageBox user={user} />
             </div>
           );
         }
@@ -24,9 +29,7 @@ const UserList = ({ users }) => {
             key={user.id}
             className="message_box_wrapper message_box_wrapper_right"
           >
-            <div key={user.id} className="message_box message_box_right">
-              <p>{user.name}</p>
-            </div>
+            <MessageBox user={user} style={messageBoxRightStyle} />
           </div>
         );
       })}

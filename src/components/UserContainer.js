@@ -34,7 +34,7 @@ const UserContainer = ({ userData, fetchUsers }) => {
                 `}
               />
             </div>
-          ) : true ? (
+          ) : error ? (
             <div className="spinner error-message">
               <span>Error Occured!</span>
             </div>
