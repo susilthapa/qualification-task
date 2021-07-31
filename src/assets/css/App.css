@@ -2,6 +2,7 @@ main {
   position: relative;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -12,8 +13,12 @@ main .main_bg {
   right: 0;
   bottom: 0;
   background: linear-gradient(307deg, #5095e4, #c7a6f0);
+  z-index: -1;
 }
-
+.heading {
+  margin: 12px 0;
+  color: #000;
+}
 .userList {
   display: flex;
   justify-content: space-between;
@@ -85,5 +90,8 @@ main .main_bg {
   .userList {
     width: 85%;
     height: 90%;
+  }
+  .heading {
+    font-size: 17px;
   }
 }

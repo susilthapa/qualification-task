@@ -37,6 +37,7 @@ const UserContainer = ({ userData, fetchUsers }) => {
   return (
     <main>
       <div className="main_bg"></div>
+      <h2 className="heading">Treeleaf Qualification Task</h2>
       <div className="userList" onScroll={handleScroll} ref={userListRef}>
         <div className="messages">
           {loading ? (
