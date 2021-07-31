@@ -1,14 +1,14 @@
-import React from 'react'
-import { Provider } from 'react-redux'
+import React from "react";
+import { Provider } from "react-redux";
 
-import './assets/css/App.css'
-import store from './redux/store'
-import UserList from './components/UserList'
+import "./assets/css/App.css";
+import store from "./redux/store";
+import UserContainer from "./components/UserContainer";
 
 function App() {
   return (
     <Provider store={store}>
-      <UserList/>
+      <UserContainer />
     </Provider>
   );
 }
