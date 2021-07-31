@@ -4,7 +4,6 @@ import FadeLoader from "react-spinners/FadeLoader";
 import { css } from "@emotion/react";
 
 import { fetchUsers } from "../redux/userActions";
-import { sortWithId } from "../utils";
 import UserList from "./UserList";
 
 const UserContainer = ({ userData, fetchUsers }) => {
@@ -57,7 +56,7 @@ const UserContainer = ({ userData, fetchUsers }) => {
             </div>
           ) : (
             <UserList
-              users={sortWithId(users?.data)?.reverse()}
+              users={users?.data}
               scrollUserListDiv={scrollUserListDiv}
             />
           )}

@@ -18,8 +18,8 @@ const UserList = ({ users, scrollUserListDiv }) => {
 
   return (
     <>
-      {users?.map((user) => {
-        if (user.id % 2 === 0) {
+      {users?.map((user, index) => {
+        if (index % 2 === 0) {
           return (
             <div key={user.id} className="message_box_wrapper">
               <MessageBox user={user} />
