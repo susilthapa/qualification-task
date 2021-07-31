@@ -6,14 +6,14 @@ import {
   FETCH_USERS_FAILURE,
 } from "./userTypes.js";
 
-export const fetchUsers = () => {
+export const fetchUsers = (url) => {
   return (dispatch) => {
     dispatch(fetchUsersRequest());
     axios
-      .get("https://gorest.co.in/public/v1/users")
+      .get(url || "https://gorest.co.in/public/v1/users")
       .then((resp) => {
         const users = resp.data;
-        console.log({ users });
+        // console.log({ users });
         dispatch(fetchUsersSuccess(users));
       })
       .catch((err) => {

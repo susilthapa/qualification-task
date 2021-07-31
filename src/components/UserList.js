@@ -2,12 +2,14 @@ import React, { useEffect, useRef } from "react";
 
 import MessageBox from "./MessageBox";
 
-const UserList = ({ users }) => {
+const UserList = ({ users, scrollUserListDiv }) => {
   const messageRef = useRef(null);
 
   useEffect(() => {
-    messageRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, []);
+    users?.length < 21
+      ? messageRef.current?.scrollIntoView({ behavior: "smooth" })
+      : scrollUserListDiv();
+  }, [users]);
 
   const messageBoxRightStyle = {
     background: "rgb(1 35 172 / 37%)",
